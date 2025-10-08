@@ -137,39 +137,39 @@ begin
 
     DecimalSeparator := '.';
 
-    qc := OpenRS_RO('SELECT * FROM bmi_appnominal WHERE %s BETWEEN _min AND _max AND curr = ''%s''',
-      [FloatToStr(cxsNominal.EditValue), sCurr]);
-
-    if not qc.IsEmpty then
-    begin
-      qdapp := OpenRS_RO('SELECT a.* FROM bmi_appnominal_det a ' +
-        'LEFT JOIN bmi_user b ON b.id = a.id_approver ' +
-        'WHERE a.id_ref = %d AND a.id_uploader = %s ORDER BY a.id',
-        [qc.FieldByName('id').AsInteger, varToStr(Aplikasi.IdUser)]);
-
-      while not qdapp.Eof do
-      begin
-//        qapp := OpenRS('SELECT * FROM bmi_doc_app_tes WHERE id_doc = %d',[id]);
-        qapp := OpenRS('SELECT * FROM bmi_doc_app WHERE id_doc = %d',[id]);
-        qapp.Insert;
-        qapp.FieldByName('id_doc').AsInteger := id;
-        qapp.FieldByName('id_userapp').AsInteger := qdapp.FieldByName('id_approver').AsInteger;
-        qapp.Post;
-        qdapp.Next;
-      end;
-
-      qdapp.Close;
-      qdapp.Free;
-    end
-    else
-    begin
-      Screen.Cursor := crDefault;
-      Application.MessageBox('User approver belum di setting. Mohon hubungi EDP.', 'Peringatan', MB_OK + MB_ICONWARNING);
-      qc.Close; qc.Free;
-      Abort;
-    end;
-
-    qc.Close; qc.Free;
+//    qc := OpenRS_RO('SELECT * FROM bmi_appnominal WHERE %s BETWEEN _min AND _max AND curr = ''%s''',
+//      [FloatToStr(cxsNominal.EditValue), sCurr]);
+//
+//    if not qc.IsEmpty then
+//    begin
+//      qdapp := OpenRS_RO('SELECT a.* FROM bmi_appnominal_det a ' +
+//        'LEFT JOIN bmi_user b ON b.id = a.id_approver ' +
+//        'WHERE a.id_ref = %d AND a.id_uploader = %s ORDER BY a.id',
+//        [qc.FieldByName('id').AsInteger, varToStr(Aplikasi.IdUser)]);
+//
+//      while not qdapp.Eof do
+//      begin
+////        qapp := OpenRS('SELECT * FROM bmi_doc_app_tes WHERE id_doc = %d',[id]);
+//        qapp := OpenRS('SELECT * FROM bmi_doc_app WHERE id_doc = %d',[id]);
+//        qapp.Insert;
+//        qapp.FieldByName('id_doc').AsInteger := id;
+//        qapp.FieldByName('id_userapp').AsInteger := qdapp.FieldByName('id_approver').AsInteger;
+//        qapp.Post;
+//        qdapp.Next;
+//      end;
+//
+//      qdapp.Close;
+//      qdapp.Free;
+//    end
+//    else
+//    begin
+//      Screen.Cursor := crDefault;
+//      Application.MessageBox('User approver belum di setting. Mohon hubungi EDP.', 'Peringatan', MB_OK + MB_ICONWARNING);
+//      qc.Close; qc.Free;
+//      Abort;
+//    end;
+//
+//    qc.Close; qc.Free;
 
   finally
     q.Close;
