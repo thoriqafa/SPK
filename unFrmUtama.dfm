@@ -158,7 +158,6 @@ object FrmUtama: TFrmUtama
     Height = 334
     Align = alClient
     TabOrder = 0
-    ExplicitHeight = 301
     object lblNamaFileTmp: TLabel
       Left = 349
       Top = 384

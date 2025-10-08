@@ -91,20 +91,9 @@ var
 begin
   sPath := ExtractFilePath(Application.ExeName);
 
-//  if VarIsNull(cbxLuLokasi.EditValue) or (cbxLuLokasi.Text = '') then
-//  begin
-//    Application.MessageBox('Silakan pilih lokasi terlebih dahulu!', 'Peringatan', MB_OK + MB_ICONWARNING);
-//    Abort;
-//  end;
-//
-//  if VarIsNull(cbxLuUploader.EditValue) or (cbxLuUploader.Text = '') then
-//  begin
-//    Application.MessageBox('Silakan pilih uploader yang sesuai terlebih dahulu!', 'Peringatan', MB_OK + MB_ICONWARNING);
-//    Abort;
-//  end;
-
   try
-    q := OpenRS('SELECT * FROM bmi_doc_tes',[]);
+//    q := OpenRS('SELECT * FROM bmi_doc_tes',[]);
+    q := OpenRS('SELECT * FROM bmi_doc',[]);
     q.Insert;
     q.FieldByName('id_jenisdoc').AsInteger := 17;
     q.FieldByName('nodoc').AsString := cxtNoDok.Text;
@@ -122,7 +111,7 @@ begin
     mID := IntToStr(id);
 
     // file tmp
-    destFile := '\\172.17.60.106\testing_file$\' + IntToStr(id) + '.pdf';
+    destFile := '\\172.16.0.113\docs$\' + IntToStr(id) + '.pdf';
     copyResult := CopyFile(PChar(FFileSAP), PChar(destFile), False);
     if not copyResult then
     begin
@@ -137,7 +126,7 @@ begin
     begin
       seqPendukung :=  i + 1;
       CopyFile(PChar(lstFiles.Items[i]),
-        PChar('\\172.17.60.106\testing_file$\' + IntToStr(id) + '_' + IntToStr(seqPendukung) + '_pendukung.pdf'), False);
+        PChar('\\172.16.0.113\docs$\' + IntToStr(id) + '_' + IntToStr(seqPendukung) + '_pendukung.pdf'), False);
     end;
 
     DeleteFile(FFileSAP);
@@ -161,7 +150,8 @@ begin
 
       while not qdapp.Eof do
       begin
-        qapp := OpenRS('SELECT * FROM bmi_doc_app_tes WHERE id_doc = %d',[id]);
+//        qapp := OpenRS('SELECT * FROM bmi_doc_app_tes WHERE id_doc = %d',[id]);
+        qapp := OpenRS('SELECT * FROM bmi_doc_app WHERE id_doc = %d',[id]);
         qapp.Insert;
         qapp.FieldByName('id_doc').AsInteger := id;
         qapp.FieldByName('id_userapp').AsInteger := qdapp.FieldByName('id_approver').AsInteger;
