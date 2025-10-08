@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/09/17 09:57:55.775.dproj,C:\Users\edp\Documents\RAD Studio\Projects\Project1.dproj=D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\uploadSPKSAP.dproj</Transaction>
+    <Transaction>2025/09/17 09:59:21.924.pas,D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKOtomatis\FrmUtama.pas=</Transaction>
+    <Transaction>2025/09/17 09:59:21.924.dfm,D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKOtomatis\FrmUtama.dfm=</Transaction>
+    <Transaction>2025/09/17 10:09:10.484.pas,D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\FrmUtama.pas=D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\unFrmUtama.pas</Transaction>
+    <Transaction>2025/09/17 10:09:10.484.dfm,D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\FrmUtama.dfm=D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\unFrmUtama.dfm</Transaction>
+    <Transaction>2025/09/24 16:06:17.068.pas,D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\Unit1.pas=D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\dm.pas</Transaction>
+    <Transaction>2025/09/24 16:06:17.068.dfm,D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\Unit1.dfm=D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\dm.dfm</Transaction>
+    <Transaction>2025/09/24 16:06:46.334.pas,D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\dm.pas=D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\unDm.pas</Transaction>
+    <Transaction>2025/09/24 16:06:46.334.dfm,D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\dm.dfm=D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\unDm.dfm</Transaction>
+    <Transaction>2025/09/24 16:07:51.257.pas,D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\unDm.pas=</Transaction>
+    <Transaction>2025/09/24 16:07:51.257.dfm,D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\unDm.dfm=</Transaction>
+    <Transaction>2025/09/24 16:08:42.768.pas,D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\Unit1.pas=D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\unDm.pas</Transaction>
+    <Transaction>2025/09/24 16:08:42.768.dfm,D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\Unit1.dfm=D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\unDm.dfm</Transaction>
+    <Transaction>2025/09/24 16:16:35.452.pas,D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\Unit1.pas=D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\unAplikasi.pas</Transaction>
+    <Transaction>2025/09/24 16:17:39.252.pas,D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\Unit1.pas=D:\bmi\projek\desktop\delphi\dev-thor\uploadSPKSAP\unTools.pas</Transaction>
+  </Transactions>
+</BorlandProject>

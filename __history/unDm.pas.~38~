@@ -1,0 +1,91 @@
+﻿unit unDm;
+
+interface
+
+uses
+  SysUtils, Classes, ZAbstractConnection, ZConnection, IniFiles, ZDataset, unAplikasi, Forms, Windows;
+
+type
+  Tdm = class(TDataModule)
+    zConn: TZConnection;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dm: Tdm;
+  Aplikasi: TAplikasi;
+  UpdatePath: string;
+
+implementation
+
+uses
+  unTools;
+
+{$R *.dfm}
+
+procedure Tdm.DataModuleCreate(Sender: TObject);
+var
+  FileIni, db, host, user,
+  password, dsn, port: string;
+
+  Ini: TIniFile;
+  i: integer;
+  q: TZQuery;
+
+  tx: TextFile;
+  section, fupdate, sId: string;
+  lstSec, lstFile: TStringList;
+  DateCheck: TDateTime;
+begin
+  Aplikasi := TAplikasi.Create;
+
+  Aplikasi.AppPath := ExtractFilePath(Application.ExeName);
+  Aplikasi.ExeName := 'HRIS';
+
+  if not FileExists(Aplikasi.AppPath + 'setting.ini') then begin
+    MsgBox('Error, file setting.ini tidak ditemukan.');
+    Application.Terminate;
+  end;
+
+  FileIni := Aplikasi.AppPath + 'setting.ini';
+  section := 'setting';
+  Ini := TIniFile.Create(FileIni);
+
+//  UpdatePath := Ini.ReadString(section,'update_path','');
+  //CekUpdate;
+
+  if (FileExists(FileIni)) then begin
+
+    if zConn.Connected = False then begin
+
+      db := Ini.ReadString(section,'db','');
+      host := Ini.ReadString(section,'host','');
+      user := Ini.ReadString(section,'user','');
+      password := Ini.ReadString(section,'password','');
+      aplikasi.POTmp := Ini.ReadString(section,'potmp','');
+      port := Ini.ReadString(section,'port','');
+//      Aplikasi.IdUser := StrToInt(Ini.ReadString(section,'iduser',''));
+
+      Aplikasi.NamaUser := '47';
+
+      zConn.Catalog := db;
+      zConn.Database := db;
+      zConn.HostName := host;
+      zConn.User := user;
+      zConn.Password := password;
+      zConn.Port := StrToInt(port);
+    end;
+
+    try
+      zConn.Connect;
+    finally
+    end;
+
+  end;
+end;
+
+end.

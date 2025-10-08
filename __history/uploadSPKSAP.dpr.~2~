@@ -1,0 +1,14 @@
+program uploadSPKSAP;
+
+uses
+  Forms,
+  FrmUtama in 'FrmUtama.pas' {FormUpload};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFormUpload, FormUpload);
+  Application.Run;
+end.

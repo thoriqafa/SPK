@@ -1,0 +1,18 @@
+object dm: Tdm
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 150
+  Width = 215
+  object zConn: TZConnection
+    ControlsCodePage = cCP_UTF16
+    Connected = True
+    HostName = '172.16.0.113'
+    Port = 3306
+    Database = 'bmi_db'
+    User = 'bmiroot'
+    Password = 'bmi@123456~'
+    Protocol = 'mysql'
+    Left = 104
+    Top = 56
+  end
+end

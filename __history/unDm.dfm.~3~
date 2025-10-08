@@ -1,0 +1,23 @@
+object dm: Tdm
+  Left = 0
+  Top = 0
+  BorderStyle = bsNone
+  Caption = 'dm'
+  ClientHeight = 247
+  ClientWidth = 515
+  Color = clBtnHighlight
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 106
+  TextHeight = 14
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF16
+    Port = 0
+    Left = 232
+    Top = 104
+  end
+end
