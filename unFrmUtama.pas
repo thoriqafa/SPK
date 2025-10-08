@@ -90,7 +90,6 @@ var
   copyResult: Boolean;
 begin
   sPath := ExtractFilePath(Application.ExeName);
-
   try
 //    q := OpenRS('SELECT * FROM bmi_doc_tes',[]);
     q := OpenRS('SELECT * FROM bmi_doc',[]);
