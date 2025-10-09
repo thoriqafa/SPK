@@ -83,14 +83,14 @@ var
   q, qapp, qm: TZQuery;
   qc, qdapp: TZReadOnlyQuery;
   id, IdPlant, i, seqPendukung: Integer;
-  sNominal, s, ss, sPath, sNoDoc, sJenisDoc, sUploader, sCurr,
+  sNominal, s, ss, sNoDoc, sJenisDoc, sUploader, sCurr,
   destFile : string;
   NomSelainRP: real;
   lstEmail, lstBody, PostData: TStringList;
   copyResult: Boolean;
 begin
-  sPath := ExtractFilePath(Application.ExeName);
   try
+    Screen.Cursor := crHourGlass;
 //    q := OpenRS('SELECT * FROM bmi_doc_tes',[]);
     q := OpenRS('SELECT * FROM bmi_doc',[]);
     q.Insert;
@@ -175,8 +175,10 @@ begin
     q.Close;
     q.Free;
 
+    Screen.Cursor := crDefault;
+
     Application.MessageBox('Data berhasil disimpan!', 'Sukses', MB_OK + MB_ICONINFORMATION);
-    Application.Terminate
+    Application.Terminate;
 
   end;
 end;
