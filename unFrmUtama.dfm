@@ -333,7 +333,6 @@ object FrmUtama: TFrmUtama
     Height = 45
     Align = alBottom
     TabOrder = 2
-    ExplicitTop = 347
     object cxBtnSimpan: TcxButton
       Left = 138
       Top = 8

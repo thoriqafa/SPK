@@ -61,7 +61,7 @@ begin
 
   if (FileExists(FileIni)) then begin
 
-    Aplikasi.IdUser := StrToInt(Ini.ReadString(section,'iduser',''));
+    Aplikasi.IdUser := StrToInt(Ini.ReadString(section,'iduser','0'));
 
     if zConn.Connected = False then begin
 

@@ -208,6 +208,11 @@ var
   sPath, sNoDoc, section: string;
   bFound: Boolean;
 begin
+  if Aplikasi.IdUser = 0 then begin
+    Application.MessageBox('Uploader belum di setting, silakan hubungi EDP untuk setting uploader.', 'Peringatan', MB_OK + MB_ICONWARNING);
+    Application.Terminate;
+  end;
+
   zqrLokasi.Close;
   zqrLokasi.Open;
 
